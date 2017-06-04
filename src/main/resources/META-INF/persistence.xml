@@ -9,11 +9,22 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
         <properties>
+            <!--какой драйвер использовать для работы с базой данных;-->
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/carshop"/>
+            <!--тут указываем URL к базе-->
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/db_1"/>
+            <!--имя пользователя этой базы-->
             <property name="hibernate.connection.username" value="root"/>
+            <!--и его пароль-->
             <property name="hibernate.connection.password" value="root"/>
+            <!-- тут мы устанавливаем диалект текущей БД, он дает возможность использовать
+            возможность генерации ключей, он автоматизирует всю эту работу;-->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <!--тут статус работы JPA:
+            update — база будет просто обновлять свою структуру;
+            validate — проверяет структуру базы но не вносит изменения;
+            create — создает таблицы, но уничтожает предыдущие данные;
+            create-drop — создает таблицы в начале сеанса и удаляет их по окончанию сеанса.-->
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>

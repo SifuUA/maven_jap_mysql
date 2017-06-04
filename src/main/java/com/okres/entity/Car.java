@@ -1,3 +1,5 @@
+package com.okres.entity;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,8 +9,15 @@ import java.util.Date;
 
 @Entity
 @Table(name = "cars")
-@NamedQuery(name = "Car.getAll", query = "SELECT c from Car c")
+@NamedQuery(name = "com.okres.entity.Car.getAll", query = "SELECT c from Car c")
 public class Car {
+
+    public Car() {
+    }
+
+    public long getId() {
+        return id;
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -56,7 +65,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
+        return "com.okres.entity.Car{" +
                 "name='" + name + '\'' +
                 ", releaseDate=" + releaseDate +
                 ", cost=" + cost +

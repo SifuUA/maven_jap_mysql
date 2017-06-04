@@ -1,3 +1,5 @@
+package com.okres.entity;
+
 /**
  * Created by Alex on 04.06.2017.
  */
@@ -38,7 +40,7 @@ public class Seller {
 
     @Override
     public String toString() {
-        return "Seller{" +
+        return "com.okres.entity.Seller{" +
                 "fullName='" + fullName + '\'' +
                 ", age=" + age +
                 ", saalry=" + saalry +
